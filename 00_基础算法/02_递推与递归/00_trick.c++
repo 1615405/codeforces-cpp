@@ -34,7 +34,7 @@ function<void(int, int)> dfs = [&](int u, int state) -> void {
 
 
 /* 3-递归实现组合型枚举 */
-function<void(int, int)> dfs1 = [&](int u, int start) -> void {
+function<void(int, int)> dfs = [&](int u, int start) -> void {
     if (u > m) {
         for (int i = 1; i <= m; i++) {
             printf("%d ", chosen[i]);
