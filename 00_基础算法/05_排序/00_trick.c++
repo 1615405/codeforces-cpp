@@ -18,24 +18,24 @@ void quick_sort(int q[], int l, int r)
 
 
 /*  查找数组第K大数  */
-int findKth(int l, int r, int k)
+int find_kth(int l, int r, int k)
 {
     if (l >= r) {
         return q[l];
     }
     int i = l - 1, j = r + 1, pivot = q[l + r >> 1];
     while (i < j) {
-        while (q[++i] > pivot);
-        while (q[--j] < pivot);
+        while (q[++i] < pivot);
+        while (q[--j] > pivot);
         if (i < j) {
             swap(q[i], q[j]);
         }
     }
     int sl = j - l + 1;
     if (sl >= k) {
-        return findKth(l, j, k);
+        return find_kth(l, j, k);
     }
-    return findKth(j + 1, r, k - sl);
+    return find_kth(j + 1, r, k - sl);
 }
 
 
